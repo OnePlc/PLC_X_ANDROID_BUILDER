@@ -1,0 +1,41 @@
+<?php
+?>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.2.0/js/bootstrap-colorpicker.js"></script>
+<link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/3.2.0/css/bootstrap-colorpicker.css">
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">Allgemein</h2>
+    </div>
+    <hr/>
+    <div class="card-body">
+        <h2 class="card-title">Farben</h2>
+
+        <div class="row">
+            <?php
+            $iCount = 1;
+            foreach($oColorTemplate->color as $oCol) { ?>
+                <div class="col-md-2">
+                    <label><?=$oCol->attributes()['name']?></label>
+                    <div id="cp<?=$iCount?>" class="input-group plc-colorpick" title="Using input value">
+                        <input type="text" class="form-control" value="<?=$oCol?>" />
+                        <span class="input-group-append">
+                            <span class="input-group-text colorpicker-input-addon"><i></i></span>
+                          </span>
+                    </div>
+                </div>
+
+            <?php
+                $iCount++;
+            } ?>
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.plc-colorpick').colorpicker();
+    });
+</script>

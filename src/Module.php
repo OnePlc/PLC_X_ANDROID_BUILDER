@@ -61,7 +61,7 @@ class Module {
                     $oDbAdapter = $container->get(AdapterInterface::class);
                     $oBuildTbl = new TableGateway('wizard_build', $oDbAdapter);
                     $aPluginTbls = [];
-                    return new Controller\WebController(
+                    return new Controller\WizardController(
                         $oDbAdapter,
                         $oBuildTbl,
                         $aPluginTbls,

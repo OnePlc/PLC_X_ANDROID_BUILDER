@@ -63,6 +63,21 @@ class WizardController extends CoreEntityController
     {
         $this->setThemeBasedLayout('androidbuilder');
 
-        return new ViewModel([]);
+        $aXmlFiles = [];
+        foreach(glob($_SERVER['DOCUMENT_ROOT'].'/../vendor/oneplace/oneplace-android-builder/build/template/app/src/main/res/values/*.xml') as $sFile) {
+            $aXmlFiles[] = $sFile;
+        }
+
+        $oColorTemplate = '';
+        foreach($aXmlFiles as $sFile) {
+            if(basename($sFile) == 'colors.xml') {
+                $oColorTemplate = new \SimpleXMLElement(file_get_contents($sFile));
+            }
+        }
+
+
+        return new ViewModel([
+            'oColorTemplate' => $oColorTemplate,
+        ]);
     }
 }

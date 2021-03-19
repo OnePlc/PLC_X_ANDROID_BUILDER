@@ -33,7 +33,7 @@ class InstallController extends CoreUpdateController {
      * @param AddressTable $oTableGateway
      * @since 1.0.0
      */
-    public function __construct(AdapterInterface $oDbAdapter, AddressTable $oTableGateway, $oServiceManager)
+    public function __construct(AdapterInterface $oDbAdapter, TableGateway $oTableGateway, $oServiceManager)
     {
         $this->oTableGateway = $oTableGateway;
         $this->sSingleForm = 'wizard-single';
@@ -59,7 +59,7 @@ class InstallController extends CoreUpdateController {
             $bTableExists = false;
 
             try {
-                $this->oTableGateway->fetchAll(false);
+                $this->oTableGateway->select();
                 $bTableExists = true;
             } catch (\RuntimeException $e) {
 
@@ -96,13 +96,13 @@ class InstallController extends CoreUpdateController {
             $oModTbl->insert([
                 'module_key' => 'oneplace-android-builder',
                 'type' => 'plugin',
-                'version' => \OnePlace\Contact\Address\Module::VERSION,
+                'version' => \OnePlace\Android\Builder\Module::VERSION,
                 'label' => 'onePlace Android Builder',
                 'vendor' => 'oneplace',
             ]);
 
             try {
-                $this->oTableGateway->fetchAll(false);
+                $this->oTableGateway->select();
                 $bTableExists = true;
             } catch (\RuntimeException $e) {
 
