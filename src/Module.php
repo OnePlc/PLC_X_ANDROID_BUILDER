@@ -13,7 +13,7 @@
  * @since 1.0.0
  */
 
-namespace OnePlace\AndroidBuilder;
+namespace OnePlace\Android\Builder;
 
 use Laminas\Db\Adapter\AdapterInterface;
 use Laminas\Db\ResultSet\ResultSet;
@@ -21,9 +21,6 @@ use Laminas\Db\TableGateway\TableGateway;
 use Laminas\Mvc\MvcEvent;
 use Laminas\ModuleManager\ModuleManager;
 use Laminas\Session\Config\StandardConfig;
-use Laminas\Session\SessionManager;
-use Laminas\Session\Container;
-use Application\Controller\CoreEntityController;
 
 class Module {
     /**
@@ -31,7 +28,7 @@ class Module {
      *
      * @since 1.0.0
      */
-    const VERSION = '1.0.0';
+    const VERSION = '1.0.1';
 
     /**
      * Load module config file

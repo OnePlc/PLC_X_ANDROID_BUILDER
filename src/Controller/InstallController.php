@@ -15,7 +15,7 @@
 
 declare(strict_types=1);
 
-namespace OnePlace\AndroidBuilder\Controller;
+namespace OnePlace\Android\Builder\Controller;
 
 use Application\Controller\CoreUpdateController;
 use Application\Model\CoreEntityModel;

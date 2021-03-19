@@ -13,7 +13,7 @@
  * @since 1.0.0
  */
 
-namespace OnePlace\AndroidBuilder;
+namespace OnePlace\Android\Builder;
 
 use Laminas\Router\Http\Literal;
 use Laminas\Router\Http\Segment;

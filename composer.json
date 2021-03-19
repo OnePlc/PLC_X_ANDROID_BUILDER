@@ -3,7 +3,7 @@
   "description": "Android Resource Builder for onePlace",
   "type": "oneplace-module",
   "license": "BSD-3-Clause",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "laminas",
     "mvc",
@@ -24,12 +24,12 @@
   },
   "autoload": {
     "psr-4": {
-      "OnePlace\\AndroidBuilder\\": "src/"
+      "OnePlace\\Android\\Builder\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "OnePlaceTest\\AndroidBuilder\\": "test/"
+      "OnePlaceTest\\Android\\Builder\\": "test/"
     }
   },
   "scripts": {
@@ -47,7 +47,7 @@
   },
   "extra": {
     "zf": {
-      "module": "OnePlace\\AndroidBuilder"
+      "module": "OnePlace\\Android\\Builder"
     }
   }
 }
